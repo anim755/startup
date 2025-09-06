@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Future | Exploring Innovation & Entrepreneurship</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #667eea;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .quiz-option:hover {
+            background-color: #f0f4ff;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <span class="text-indigo-600 font-bold text-xl">Startup Future</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-indigo-600">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600">About</a>
+                    <a href="#trends" class="nav-link text-gray-700 hover:text-indigo-600">Trends</a>
+                    <a href="#quiz" class="nav-link text-gray-700 hover:text-indigo-600">Quiz</a>
+                    <a href="#resources" class="nav-link text-gray-700 hover:text-indigo-600">Resources</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700 hover:text-indigo-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">About</a>
+                <a href="#trends" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Trends</a>
+                <a href="#quiz" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Quiz</a>
+                <a href="#resources" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Resources</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="section gradient-bg text-white pt-32 pb-20 md:pt-40 md:pb-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 fade-in">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">Shape The Future With <span class="text-yellow-300">Innovation</span></h1>
+                    <p class="text-xl mb-8 opacity-90">Discover the latest startup trends, tools, and insights to fuel your entrepreneurial journey.</p>
+                    <div class="flex space-x-4">
+                        <a href="#about" class="bg-white text-indigo-600 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold shadow-lg transition duration-300">Explore More</a>
+                        <a href="#quiz" class="border-2 border-white text-white hover:bg-white hover:text-indigo-600 px-8 py-3 rounded-full font-semibold transition duration-300">Take Quiz</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 fade-in">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Startup Innovation" class="rounded-xl shadow-2xl border-4 border-white">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Mission</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We empower entrepreneurs and innovators with the knowledge, tools, and community needed to build the startups of tomorrow.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 card-hover">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-lightbulb text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Innovation Insights</h3>
+                    <p class="text-gray-600">Stay ahead with cutting-edge research and analysis on emerging technologies and business models.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 card-hover">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-network-wired text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Global Network</h3>
+                    <p class="text-gray-600">Connect with a worldwide community of founders, investors, and industry experts.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 card-hover">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-chart-line text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Growth Tools</h3>
+                    <p class="text-gray-600">Access curated resources and frameworks to accelerate your startup's development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Topics -->
+    <section id="trends" class="section py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Trending Startup Themes</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Explore the most promising areas of innovation that are shaping the future of business.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 card-hover">
+                    <div class="h-48 overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1677442135136-760c813a7439?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="AI" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">AI & Machine Learning</h3>
+                    <p class="text-gray-600 mb-4">How artificial intelligence is transforming industries from healthcare to finance.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 card-hover">
+                    <div class="h-48 overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Web3" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Web3 & Blockchain</h3>
+                    <p class="text-gray-600 mb-4">The decentralized future of the internet and its business implications.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 card-hover">
+                    <div class="h-48 overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sustainability" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Climate Tech</h3>
+                    <p class="text-gray-600 mb-4">Innovative solutions addressing climate change and sustainability challenges.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 card-hover">
+                    <div class="h-48 overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c811329d1a50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Biotech" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Biotech & Health Tech</h3>
+                    <p class="text-gray-600 mb-4">Breakthroughs in medicine, diagnostics, and healthcare delivery systems.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 card-hover">
+                    <div class="h-48 overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Future Work" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Future of Work</h3>
+                    <p class="text-gray-600 mb-4">How remote work, automation, and digital nomadism are reshaping careers.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 card-hover">
+                    <div class="h-48 overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1523961130370-0d0cede832b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Space" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Space Tech</h3>
+                    <p class="text-gray-600 mb-4">Commercial space exploration, satellite technology, and beyond.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">View All Trends</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quiz -->
+    <section id="quiz" class="section py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Find Your Startup Match</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Take our quick quiz to discover which startup trends align with your interests and skills.</p>
+            </div>
+            
+            <div id="quiz-container" class="bg-gray-50 rounded-xl shadow-lg p-8">
+                <div id="quiz-intro" class="text-center">
+                    <h3 class="text-2xl font-semibold mb-4">Ready to find your perfect startup niche?</h3>
+                    <p class="mb-8 text-gray-600">Answer 5 simple questions and we'll recommend the most promising areas for your entrepreneurial journey.</p>
+                    <button id="start-quiz" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Start Quiz</button>
+                </div>
+                
+                <div id="quiz-questions" class="hidden">
+                    <div id="question-container" class="mb-8">
+                        <h3 id="question" class="text-xl font-semibold mb-6"></h3>
+                        <div id="options" class="space-y-3"></div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <div id="progress" class="text-gray-600"></div>
+                        <button id="next-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-6 rounded-full transition duration-300">Next</button>
+                    </div>
+                </div>
+                
+                <div id="quiz-results" class="hidden text-center">
+                    <h3 class="text-2xl font-semibold mb-4">Your Recommended Startup Path</h3>
+                    <div id="result-content" class="mb-8"></div>
+                    <button id="retake-quiz" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Retake Quiz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Essential Resources</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Curated tools, platforms, and knowledge to accelerate your startup journey.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 card-hover">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-book-open text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Learning</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><a href="#" class="hover:text-indigo-600">• Y Combinator Startup School</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">• Harvard Innovation Labs</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">• Stanford Entrepreneurship</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">• MIT OpenCourseWare</a></li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 card-hover">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-tools text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Tools</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><a href="#" class="hover:text-indigo-600">• Notion for Startups</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">• Figma for Design</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">• Stripe for Payments</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">• AWS for Hosting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 card-hover">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-users text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Community</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><a href="#" class="hover:text-indigo-600">• Indie Hackers</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">• Product Hunt</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">• Founder Groups</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">• Local Meetups</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 gradient-bg text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Join Our Community of Innovators</h2>
+            <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">Get weekly insights, exclusive resources, and networking opportunities delivered to your inbox.</p>
+            
+            <div class="max-w-md mx-auto">
+                <form class="flex flex-col sm:flex-row gap-3">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-3 rounded-full transition duration-300">Subscribe</button>
+                </form>
+                <p class="text-sm mt-3 opacity-80">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">Startup Future</h3>
+                    <p class="text-gray-400">Empowering the next generation of entrepreneurs and innovators.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Explore</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-white">Home</a></li>
+                        <li><a href="#about" class="hover:text-white">About</a></li>
+                        <li><a href="#trends" class="hover:text-white">Trends</a></li>
+                        <li><a href="#quiz" class="hover:text-white">Quiz</a></li>
+                        <li><a href="#resources" class="hover:text-white">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-envelope mr-2"></i> hello@startupfuture.com</li>
+                        <li><i class="fas fa-phone mr-2"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> San Francisco, CA</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Startup Future. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+        
+        // Quiz functionality
+        const quizQuestions = [
+            {
+                question: "What type of problems are you most passionate about solving?",
+                options: [
+                    "Technological challenges (AI, software, etc.)",
+                    "Environmental and sustainability issues",
+                    "Healthcare and medical problems",
+                    "Social and community-based challenges"
+                ]
+            },
+            {
+                question: "What's your preferred work environment?",
+                options: [
+                    "Fast-paced tech hub",
+                    "Remote/anywhere with internet",
+                    "Research lab or university",
+                    "Out in the field with customers"
+                ]
+            },
+            {
+                question: "Which skill set do you identify with most?",
+                options: [
+                    "Technical/Engineering",
+                    "Design/Creativity",
+                    "Business/Strategy",
+                    "Social/Communication"
+                ]
+            },
+            {
+                question: "What's your funding comfort level?",
+                options: [
+                    "Bootstrapped with minimal investment",
+                    "Seeking angel/VC funding",
+                    "Government/non-profit grants",
+                    "Crowdfunding/community support"
+                ]
+            },
+            {
+                question: "What's your ideal company size in 5 years?",
+                options: [
+                    "Small team (<10 people)",
+                    "Medium-sized (50-100 people)",
+                    "Large corporation (500+ people)",
+                    "Not sure - depends on the opportunity"
+                ]
+            }
+        ];
+        
+        const quizResults = {
+            "AI & Tech": {
+                description: "You're drawn to technological innovation and digital solutions. Consider exploring artificial intelligence, SaaS products, or developer tools. The tech startup world moves quickly but offers immense opportunities for those who can build scalable solutions.",
+                resources: [
+                    "Y Combinator's Startup School",
+                    "TechCrunch for latest trends",
+                    "AngelList for tech job opportunities"
+                ]
+            },
+            "Sustainability": {
+                description: "Environmental impact matters to you. Climate tech, renewable energy, and circular economy startups could be your calling. This space is growing rapidly with increasing consumer and investor interest in sustainable solutions.",
+                resources: [
+                    "Climate Tech VC newsletter",
+                    "GreenBiz for industry news",
+                    "Cleantech Group reports"
+                ]
+            },
+            "Health & Biotech": {
+                description: "Healthcare innovation aligns with your interests. From digital health platforms to biotech breakthroughs, this sector combines meaningful impact with significant commercial potential. Regulatory knowledge is key in this space.",
+                resources: [
+                    "Rock Health reports",
+                    "The Health Care Blog",
+                    "BioWorld industry news"
+                ]
+            },
+            "Social Impact": {
+                description: "You're motivated by community and social change. Consider social enterprises, education technology, or platforms that connect people. These ventures often blend purpose with profit in innovative ways.",
+                resources: [
+                    "Stanford Social Innovation Review",
+                    "ImpactAlpha for impact investing",
+                    "Ashoka fellowship programs"
+                ]
+            }
+        };
+        
+        let currentQuestion = 0;
+        let answers = [];
+        
+        document.getElementById('start-quiz').addEventListener('click', function() {
+            document.getElementById('quiz-intro').classList.add('hidden');
+            document.getElementById('quiz-questions').classList.remove('hidden');
+            showQuestion();
+        });
+        
+        document.getElementById('retake-quiz').addEventListener('click', function() {
+            document.getElementById('quiz-results').classList.add('hidden');
+            document.getElementById('quiz-intro').classList.remove('hidden');
+            currentQuestion = 0;
+            answers = [];
+        });
+        
+        function showQuestion() {
+            const questionContainer = document.getElementById('question');
+            const optionsContainer = document.getElementById('options');
+            const progressContainer = document.getElementById('progress');
+            
+            questionContainer.textContent = quizQuestions[currentQuestion].question;
+            optionsContainer.innerHTML = '';
+            
+            quizQuestions[currentQuestion].options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.classList.add('quiz-option', 'p-4', 'border', 'border-gray-300', 'rounded-lg', 'cursor-pointer', 'transition');
+                optionElement.textContent = option;
+                
+                optionElement.addEventListener('click', function() {
+                    // Remove selected class from all options
+                    document.querySelectorAll('.quiz-option').forEach(opt => {
+                        opt.classList.remove('bg-indigo-100', 'border-indigo-500');
+                    });
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('bg-indigo-100', 'border-indigo-500');
+                    
+                    // Store answer
+                    answers[currentQuestion] = index;
+                    
+                    // Enable next button
+                    document.getElementById('next-btn').disabled = false;
+                });
+                
+                optionsContainer.appendChild(optionElement);
+            });
+            
+            progressContainer.textContent = `Question ${currentQuestion + 1} of ${quizQuestions.length}`;
+            document.getElementById('next-btn').disabled = true;
+        }
+        
+        document.getElementById('next-btn').addEventListener('click', function() {
+            currentQuestion++;
+            
+            if (currentQuestion < quizQuestions.length) {
+                showQuestion();
+            } else {
+                showResults();
+            }
+        });
+        
+        function showResults() {
+            document.getElementById('quiz-questions').classList.add('hidden');
+            document.getElementById('quiz-results').classList.remove('hidden');
+            
+            // Simple scoring - in a real app you'd have more sophisticated logic
+            const techScore = (answers[0] === 0 ? 2 : 0) + (answers[1] === 0 ? 1 : 0) + (answers[2] === 0 ? 1 : 0);
+            const envScore = (answers[0] === 1 ? 2 : 0) + (answers[3] === 2 ? 1 : 0);
+            const healthScore = (answers[0] === 2 ? 2 : 0) + (answers[2] === 2 ? 1 : 0);
+            const socialScore = (answers[0] === 3 ? 2 : 0) + (answers[1] === 3 ? 1 : 0) + (answers[4] === 3 ? 1 : 0);
+            
+            let resultKey;
+            const scores = [techScore, envScore, healthScore, socialScore];
+            const maxScore = Math.max(...scores);
+            
+            if (maxScore === techScore) resultKey = "AI & Tech";
+            else if (maxScore === envScore) resultKey = "Sustainability";
+            else if (maxScore === healthScore) resultKey = "Health & Biotech";
+            else resultKey = "Social Impact";
+            
+            const result = quizResults[resultKey];
+            const resultContent = document.getElementById('result-content');
+            
+            resultContent.innerHTML = `
+                <div class="bg-white text-gray-800 p-6 rounded-lg shadow-md mb-6">
+                    <h4 class="text-xl font-bold text-indigo-600 mb-3">${resultKey}</h4>
+                    <p class="mb-4">${result.description}</p>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <h5 class="font-semibold mb-2">Recommended Resources:</h5>
+                        <ul class="list-disc pl-5 space-y-1">
+                            ${result.resources.map(res => `<li>${res}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add fade-in animation to sections when they come into view
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
